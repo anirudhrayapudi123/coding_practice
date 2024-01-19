@@ -1,0 +1,20 @@
+inp = [1,2,3]
+dict = {}
+for i in inp:
+    if str(i) not in dict:
+        dict[str(i)] = 1
+    else:
+        k = dict[str(i)]
+        dict[str(i)] = k+1
+print(dict)
+list1 = []
+flag = True
+flag_func = lambda list1,ele : True if ele in list1 else False
+for key,value in dict.items():
+    if(flag_func(list1,dict[key])):
+        flag = True
+        break
+    else:
+        flag = False
+        list1.append(dict[key])
+print(flag)
